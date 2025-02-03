@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="responsiveStyle.css">
+</head>
+
+<body>
+
+    <div class="bgImg">
+        <!-- <img src="img/backgroundImg.jpg" alt=""> -->
+    </div>
+
+    <!-- nav bar section -->
+    <nav>
+        <div class="logo">Bimo.</div>
+        <div class="navOptions">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <!-- <li><a href="#resume">Resume</a></li> -->
+                <!-- <li><a href="https://drive.google.com/file/d/1OvVbB1zFSoZwVIhQFrRTv4cW9s7OF4_c/view?usp=drivesdk" id="resume-btn" target="_blank">Resume</a></li> -->
+                <li><a href="#about">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Sections -->
+    <div class="mainContainer">
+        <!-- Home Section -->
+        <section id="home" class="page">
+            <div class="leftContainer">
+                <h1>Hii there</h1>
+                <h2>This is Bimochan Jena</h2>
+                <p>I'm A Developer...</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="page">
+            <div class="skillsMainContainer">
+                <div class="box js">
+                    <!-- <a href="#" id="btnA">Explore</a> -->
+                </div>
+                <div class="box native">
+                    <!-- <a href="#" id="btnA">Explore</a> -->
+                </div>
+                <div class="box node">
+                    <!-- <a href="#" id="btnA">Explore</a> -->
+                </div>
+                <div class="box react">
+                    <!-- <a href="#" id="btnA">Explore</a> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="page">
+            <div class="educationMainContainer">
+                <div class="line">
+                    <img src="img/circleBG.jpg" class="circle" data-title="MCA, Full Stack Development"
+                        data-institute="Dev Bhoomi Uttrakhand University" data-year="2024-2026">
+                    <img src="img/circleBG.jpg" class="circle" data-title="BCA, Computer Application"
+                        data-institute="Veer Narmad South Gujarat University" data-year="2021-2024"
+                        data-marks="CGPA - 92%">
+                </div>
+            </div>
+        </section>
+
+        <!-- pop up section -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h3 id="popup-title"></h3>
+                <h4 id="popup-institute"></h4>
+                <p id="popup-year"></p>
+                <p id="popup-marks"></p>
+            </div>
+        </div>
+
+
+        <!-- Project Section -->
+        <section id="projects" class="page">
+            <div class="skillsMainContainer">
+                <div class="box">
+                    <p id="boxP">Portfolio</p>
+                    <a href="#" id="btnA">Explore</a>
+                </div>
+                <div class="box">
+                    <p id="boxP">Attendo</p>
+                    <a href="#" id="btnA">Explore</a>
+                </div>
+                <div class="box">
+                    <p id="boxP">Pixels</p>
+                    <a href="#" id="btnA">Explore</a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- About Section -->
+        <section id="about" class="page">
+            <div class="aboutMainContainer">
+                <div class="leftAbout">
+                    <h3>About Me</h3>
+                    <p>Web Developer and Designer</p>
+                    <div class="connect-btn">
+                        <a href="#">GitHub</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="rightAbout">
+                    <div class="contactMe">
+                        <h3>CONTACT</h3>
+                        <form onsubmit="emailSend(); reset(); return false;">
+                            <input type="text" id="name" placeholder="Enter Your Name" required><br>
+                            <input type="email" id="email" placeholder="Enter Your Email-Id" required><br>
+                            <input type="mobile" id="mobile" placeholder="Enter Your PhoneNumber" required><br>
+                            <textarea name="" id="message" class="textarea" cols="38" rows="5"
+                                placeholder="Enter Your Query"></textarea>
+                            <button type="submit" onclick="emailSend()" class="submitBtn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Sections -->
+    <footer>
+        <div class="footerSection">
+            <p>&copy; 2025 Bimochan Jena. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "L0w2Z_y7Yxc_vZlCC",
+            });
+        })();
+    </script>
+
+
+
+    <!-- email script -->
+
+    <script>
+        function emailSend(){
+            let parms = {
+                name : document.getElementById("name").value,
+                email : document.getElementById("email").value,
+                mobile : document.getElementById("mobile").value,
+                message : document.getElementById("message").value,
+            }
+
+            emailjs.send("service_wspxsob","template_1stfh0r",parms).then(alert("Email Sent!!"))
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
